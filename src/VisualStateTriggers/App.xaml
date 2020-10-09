@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:VisualStateTriggers.Controls"
+             xmlns:controlTemplates="clr-namespace:VisualStateTriggers.ControlTemplates"
+             xmlns:converters="clr-namespace:VisualStateTriggers.Converters"
+             x:Class="VisualStateTriggers.App">
+    <Application.Resources>
+        <ControlTemplate x:Key="CatTemplate">
+            <controlTemplates:CatView />
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="BirdTemplate">
+            <controlTemplates:BirdView />
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="DogTemplate">
+            <controlTemplates:DogView />
+        </ControlTemplate>
+
+        <Style TargetType="controls:AnimalView" x:Key="CatTemplateStyle">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource CatTemplate}" />
+        </Style>
+
+        <Style TargetType="controls:AnimalView" x:Key="BirdTemplateStyle">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource BirdTemplate}" />
+        </Style>
+
+        <Style TargetType="controls:AnimalView" x:Key="DogTemplateStyle">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource DogTemplate}" />
+        </Style>
+
+        <converters:AnimalEnumConverter x:Key="AnimalEnumConverter" />
+    </Application.Resources>
+</Application>

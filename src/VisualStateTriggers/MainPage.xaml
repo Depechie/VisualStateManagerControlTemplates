@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:VisualStateTriggers.ViewModels"
+             xmlns:controls="clr-namespace:VisualStateTriggers.Controls"
+             xmlns:models="clr-namespace:VisualStateTriggers.Models"
+             x:Class="VisualStateTriggers.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Margin="20,30,20,0">
+            <Label Text="{Binding AnimalDescription}" TextColor="Red" />
+            <controls:AnimalView x:Name="AnimalViewControl" Animal="{Binding Animal}" AnimalDescription="{Binding AnimalDescription}">
+                <Label Text="Main page content" />
+            </controls:AnimalView>
+            <Label Text="{Binding AnimalDescription}" TextColor="Red" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

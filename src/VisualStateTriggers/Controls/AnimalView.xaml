@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:VisualStateTriggers.Controls"
+             xmlns:models="clr-namespace:VisualStateTriggers.Models"
+             x:Class="VisualStateTriggers.Controls.AnimalView">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroupList>
+            <VisualStateGroup>
+                <VisualState x:Name="CatVisualState">
+                    <VisualState.StateTriggers>
+                        <StateTrigger IsActive="{Binding Animal, Converter={StaticResource AnimalEnumConverter}, ConverterParameter={x:Static models:AnimalType.Cat}}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="Style" Value="{StaticResource CatTemplateStyle}" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="DogVisualState">
+                    <VisualState.StateTriggers>
+                        <StateTrigger IsActive="{Binding Animal, Converter={StaticResource AnimalEnumConverter}, ConverterParameter={x:Static models:AnimalType.Dog}}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="Style" Value="{StaticResource DogTemplateStyle}" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="BirdVisualState">
+                    <VisualState.StateTriggers>
+                        <StateTrigger IsActive="{Binding Animal, Converter={StaticResource AnimalEnumConverter}, ConverterParameter={x:Static models:AnimalType.Bird}}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="Style" Value="{StaticResource BirdTemplateStyle}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateGroupList>
+    </VisualStateManager.VisualStateGroups>
+</ContentView>
