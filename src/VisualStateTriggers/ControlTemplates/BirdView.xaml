@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VisualStateTriggers.ControlTemplates.BirdView">
     <ContentView.Content>
         <StackLayout>
-            <Label Text="BIRD VIEW" />
+            <Label Text="{TemplateBinding AnimalDescription}" />
             <ContentPresenter HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
             <Label Text="BIRD VIEW" />
         </StackLayout>

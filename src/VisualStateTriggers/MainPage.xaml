@@ -10,6 +10,18 @@
 
     <ContentPage.Content>
         <StackLayout Margin="20,30,20,0">
+            <Label Text="Select your view..." />
+            <Picker x:Name="picker"
+                    Title="Select your view"
+                    SelectedItem="{Binding SelectedView}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Cat</x:String>
+                        <x:String>Dog</x:String>
+                        <x:String>Bird</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
             <Label Text="{Binding AnimalDescription}" TextColor="Red" />
             <controls:AnimalView x:Name="AnimalViewControl" Animal="{Binding Animal}" AnimalDescription="{Binding AnimalDescription}">
                 <Label Text="Main page content" />

@@ -17,7 +17,7 @@ namespace VisualStateTriggers.ViewModels
             }
         }
 
-        private AnimalType _animal;
+        private AnimalType _animal = AnimalType.Cat;
         public AnimalType Animal
         {
             get => _animal;
@@ -28,10 +28,21 @@ namespace VisualStateTriggers.ViewModels
             }
         }
 
+        private string _selectedView = "Cat";
+        public string SelectedView
+        {
+            get => _selectedView;
+            set
+            {
+                _selectedView = value;
+                Animal = Enum<AnimalType>.Parse(value);
+                OnPropertyChanged();
+            }
+        }
+
         public MainViewModel()
         {
             AnimalDescription = AnimalType.Cat.ToString();
-            Animal = AnimalType.Bird;
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
