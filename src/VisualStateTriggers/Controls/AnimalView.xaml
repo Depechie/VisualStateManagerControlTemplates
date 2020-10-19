@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:VisualStateTriggers.Controls"
              xmlns:models="clr-namespace:VisualStateTriggers.Models"
-             x:Class="VisualStateTriggers.Controls.AnimalView">
+             xmlns:triggers="clr-namespace:VisualStateTriggers.Triggers"
+             x:Class="VisualStateTriggers.Controls.AnimalView"
+             x:Name="AnimalViewName"
+             Padding="0,0,0,5">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroupList>
             <VisualStateGroup>
                 <VisualState x:Name="CatVisualState">
                     <VisualState.StateTriggers>
-                        <StateTrigger IsActive="{Binding Animal, Converter={StaticResource AnimalEnumConverter}, ConverterParameter={x:Static models:AnimalType.Cat}}" />
+                        <triggers:EnumStateTrigger EnumType="{x:Type models:AnimalType}" EnumValue="{x:Static models:AnimalType.Cat}" Value="{Binding Animal}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Property="Style" Value="{StaticResource CatTemplateStyle}" />
@@ -17,7 +19,7 @@
                 </VisualState>
                 <VisualState x:Name="DogVisualState">
                     <VisualState.StateTriggers>
-                        <StateTrigger IsActive="{Binding Animal, Converter={StaticResource AnimalEnumConverter}, ConverterParameter={x:Static models:AnimalType.Dog}}" />
+                        <triggers:EnumStateTrigger EnumType="{x:Type models:AnimalType}" EnumValue="{x:Static models:AnimalType.Dog}" Value="{Binding Animal}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Property="Style" Value="{StaticResource DogTemplateStyle}" />
@@ -25,7 +27,7 @@
                 </VisualState>
                 <VisualState x:Name="BirdVisualState">
                     <VisualState.StateTriggers>
-                        <StateTrigger IsActive="{Binding Animal, Converter={StaticResource AnimalEnumConverter}, ConverterParameter={x:Static models:AnimalType.Bird}}" />
+                        <triggers:EnumStateTrigger EnumType="{x:Type models:AnimalType}" EnumValue="{x:Static models:AnimalType.Bird}" Value="{Binding Animal}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Property="Style" Value="{StaticResource BirdTemplateStyle}" />

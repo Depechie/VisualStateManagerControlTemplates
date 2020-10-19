@@ -19,6 +19,17 @@
     <Folder Include="ViewModels\" />
     <Folder Include="ControlTemplates\" />
     <Folder Include="Controls\" />
-    <Folder Include="Converters\" />
+    <Folder Include="Triggers\" />
+    <Folder Include="MarkupExtensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="bird.png" />
+    <None Remove="cat.png" />
+    <None Remove="dog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="bird.png" />
+    <EmbeddedResource Include="cat.png" />
+    <EmbeddedResource Include="dog.png" />
   </ItemGroup>
 </Project>

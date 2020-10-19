@@ -10,6 +10,8 @@
 
     <ContentPage.Content>
         <StackLayout Margin="20,30,20,0">
+<!-- Comment out the following if you want to dynamically change data content view from a picker selection -->
+<!--
             <Label Text="Select your view..." />
             <Picker x:Name="picker"
                     Title="Select your view"
@@ -27,6 +29,16 @@
                 <Label Text="Main page content" />
             </controls:AnimalView>
             <Label Text="{Binding AnimalDescription}" TextColor="Red" />
+-->
+            <CollectionView ItemsSource="{Binding Animals}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:AnimalView Animal="{Binding Animal}" AnimalName="{Binding AnimalName}" AnimalDescription="{Binding AnimalDescription}">
+                            <Label Text="List item" />
+                        </controls:AnimalView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

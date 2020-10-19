@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using VisualStateTriggers.Models;
 
@@ -40,9 +41,25 @@ namespace VisualStateTriggers.ViewModels
             }
         }
 
+        private ObservableCollection<AnimalModel> _animals = new ObservableCollection<AnimalModel>();
+        public ObservableCollection<AnimalModel> Animals
+        {
+            get => _animals;
+            set
+            {
+                _animals = value;
+                OnPropertyChanged();
+            }
+        }
         public MainViewModel()
         {
             AnimalDescription = AnimalType.Cat.ToString();
+
+            Animals.Add(new AnimalModel() { Animal = AnimalType.Bird, AnimalName = "Jack", AnimalDescription = "Sparrow" });
+            Animals.Add(new AnimalModel() { Animal = AnimalType.Cat, AnimalName = "Cheshire", AnimalDescription = "Tabby British Shorthair" });
+            Animals.Add(new AnimalModel() { Animal = AnimalType.Bird, AnimalName = "Woody", AnimalDescription = "Woodpecker" });
+            Animals.Add(new AnimalModel() { Animal = AnimalType.Dog, AnimalName = "Laika", AnimalDescription = "Space dog" });
+            Animals.Add(new AnimalModel() { Animal = AnimalType.Dog, AnimalName = "Lassie", AnimalDescription = "Collie" });
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

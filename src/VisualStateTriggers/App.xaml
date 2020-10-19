@@ -2,7 +2,6 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:VisualStateTriggers.Controls"
              xmlns:controlTemplates="clr-namespace:VisualStateTriggers.ControlTemplates"
-             xmlns:converters="clr-namespace:VisualStateTriggers.Converters"
              x:Class="VisualStateTriggers.App">
     <Application.Resources>
         <ControlTemplate x:Key="CatTemplate">
@@ -31,7 +30,5 @@
             <Setter Property="ControlTemplate"
                     Value="{StaticResource DogTemplate}" />
         </Style>
-
-        <converters:AnimalEnumConverter x:Key="AnimalEnumConverter" />
     </Application.Resources>
 </Application>
