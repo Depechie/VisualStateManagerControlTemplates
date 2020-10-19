@@ -14,17 +14,14 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <Image Source="{markupextensions:ImageResourceExtension VisualStateTriggers.bird.png}"
-                   Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
+                   Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
 
-            <Label Text="{TemplateBinding AnimalName}"
-                   Grid.Column="1" Grid.Row="0" />
+            <ContentPresenter Grid.Column="1" Grid.Row="0" />
             <Label Text="{TemplateBinding AnimalDescription}"
-                   Grid.Column="1" Grid.Row="1" />
-            <ContentPresenter Grid.Column="1" Grid.Row="2" />            
+                   Grid.Column="1" Grid.Row="1" />       
         </Grid>
     </ContentView.Content>
 </ContentView>

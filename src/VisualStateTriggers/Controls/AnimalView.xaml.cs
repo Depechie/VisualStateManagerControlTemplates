@@ -10,11 +10,6 @@ namespace VisualStateTriggers.Controls
             typeof(AnimalView),
             default(string));
 
-        public static readonly BindableProperty AnimalNameProperty = BindableProperty.Create(nameof(AnimalName),
-            typeof(string),
-            typeof(AnimalView),
-            default(string));
-
         public static readonly BindableProperty AnimalProperty = BindableProperty.Create(nameof(Animal),
             typeof(AnimalType),
             typeof(AnimalView),
@@ -24,12 +19,6 @@ namespace VisualStateTriggers.Controls
         {
             get => (string)GetValue(AnimalDescriptionProperty);
             set => SetValue(AnimalDescriptionProperty, value);
-        }
-
-        public string AnimalName
-        {
-            get => (string)GetValue(AnimalNameProperty);
-            set => SetValue(AnimalNameProperty, value);
         }
 
         public AnimalType Animal

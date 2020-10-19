@@ -33,8 +33,8 @@
             <CollectionView ItemsSource="{Binding Animals}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <controls:AnimalView Animal="{Binding Animal}" AnimalName="{Binding AnimalName}" AnimalDescription="{Binding AnimalDescription}">
-                            <Label Text="List item" />
+                        <controls:AnimalView Animal="{Binding Animal}" AnimalDescription="{Binding AnimalDescription}">
+                            <Label Text="{Binding AnimalName}" />
                         </controls:AnimalView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
