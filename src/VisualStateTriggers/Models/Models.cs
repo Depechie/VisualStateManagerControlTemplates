@@ -1,7 +1,7 @@
 ﻿using System;
 using VisualStateTriggers.Models;
 
-namespace VisualStateTriggers.ViewModels
+namespace VisualStateTriggers.Models
 {
     public class AnimalModel
     {
